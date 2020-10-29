@@ -41,14 +41,19 @@ def get_data(URL, download_path):
     print("Downloading data for county: {}, city: {}".format(county_element.text, city_element.text))
     seconds_waited = 0
     while not os.path.exists(most_recent_waste_data):
-        print("Download taking {} seconds...".format(seconds_waited))
+#         print("Download taking {} seconds...".format(seconds_waited))
         time.sleep(1)
         seconds_waited += 1
-        
+    
+    print("Download took {} seconds...".format(seconds_waited))
     new_file_name = download_path + "/" + county_element.text + "_" + city_element.text + ".xlsx"
     
     if os.path.isfile(most_recent_waste_data):
         os.rename(most_recent_waste_data, new_file_name)
+        try:
+            os.remove(most_recent_waste_data)
+        except:
+            pass
     
     convert_to_csv(new_file_name)
 
@@ -64,8 +69,12 @@ def convert_to_csv(path):
     data_xls.to_csv(csv_file_path, index=False)
 
 if __name__ == "__main__":
-	possible_URLs = generate_URLs()
 
+	test_county_codes = range(1, 3)
+	test_city_codes = range(59, 63)
+	possible_URLs = generate_URLs(test_county_codes, test_city_codes)
+	# possible_URLs = generate_URLs()
+	
 	for url in tqdm(possible_URLs):
 	    try:
 	        driver = webdriver.Chrome(options=options)
