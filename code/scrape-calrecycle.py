@@ -32,9 +32,9 @@ def get_data(URL, download_path):
     """
     driver.get(URL)
     wait = WebDriverWait(driver, 1.5)
-    # NEED TO USE SINGLE QUOTES FOR CSS SELECTOR
+    # NEED TO USE SINGLE QUOTES FOR CSS SELECTOR?
     city_element = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '#LocalGovernmentIDList_taglist > li > span:nth-child(1)')))
-    county_element = driver.find_element_by_css_selector('#CountyID > option:nth-child(2)')
+    county_element = driver.find_element_by_css_selector('#CountyID > option[selected="selected"]')
     
     driver.find_element_by_css_selector('#ExportToExcel').send_keys("\n")
     most_recent_waste_data = download_path + "/ResidentialStreamsExport.xlsx"
@@ -70,18 +70,18 @@ def convert_to_csv(path):
 
 if __name__ == "__main__":
 
-	test_county_codes = range(1, 3)
-	test_city_codes = range(59, 63)
-	possible_URLs = generate_URLs(test_county_codes, test_city_codes)
 	# possible_URLs = generate_URLs()
-	
+	subset_county_codes = range(19, 20)
+	# subset_city_codes = range(59, 63)
+	possible_URLs = generate_URLs(subset_county_codes)
+
 	for url in tqdm(possible_URLs):
 	    try:
 	        driver = webdriver.Chrome(options=options)
 	        get_data(url, PATH_TO_DOWNLOADS)
+	        driver.quit()
 	    except TimeoutException as exception:
 	        # print("No data for this URL: ", url)
 	        driver.quit()
-	driver.quit()
 
 
