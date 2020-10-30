@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
-PATH_TO_DOWNLOADS = "/Users/mdong/dataScience/projects-ml/waste-management/calrecycle-data"
+PATH_TO_DOWNLOADS = "../calrecycle-data"
 options = Options()
 prefs = {'download.default_directory' : PATH_TO_DOWNLOADS}
 options.add_experimental_option('prefs', prefs)
