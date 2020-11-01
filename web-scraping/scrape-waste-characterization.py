@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
-PATH_TO_DOWNLOADS = "../calrecycle-data"
+PATH_TO_DOWNLOADS = "/Users/mdong/dataScience/projects-ml/waste-management/calrecycle-data"
 options = Options()
 prefs = {'download.default_directory' : PATH_TO_DOWNLOADS}
 options.add_experimental_option('prefs', prefs)
@@ -32,7 +32,7 @@ def generate_URLs(county_codes=range(1, 59), city_codes=range(59, 507), county_l
 	return possible_URLs
 
 def get_data(URL, download_path):
-    """Exports excel file for a given county and city
+    """Exports excel file to download_path for a given county and city
     """
     driver.get(URL)
     wait = WebDriverWait(driver, 1.5)
