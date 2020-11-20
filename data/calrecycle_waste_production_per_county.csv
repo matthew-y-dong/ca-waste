@@ -50,21 +50,10 @@ Year,Waste Produced (Tons),County
 2018.0,59132.46,Tehama
 2019.0,66278.44,Tehama
 1995.0,641.0,Modoc
-1996.0,,Modoc
 1997.0,6.91,Modoc
-1998.0,,Modoc
-1999.0,,Modoc
 2000.0,72.0,Modoc
-2001.0,,Modoc
-2002.0,,Modoc
-2003.0,,Modoc
 2004.0,2.27,Modoc
-2005.0,,Modoc
-2006.0,,Modoc
-2007.0,,Modoc
-2008.0,,Modoc
 2009.0,18.58,Modoc
-2010.0,,Modoc
 2011.0,15.19,Modoc
 2012.0,107.91,Modoc
 2013.0,17.14,Modoc
@@ -837,7 +826,6 @@ Year,Waste Produced (Tons),County
 2005.0,5759.25,Del Norte
 2006.0,4.67,Del Norte
 2007.0,3.68,Del Norte
-2008.0,,Del Norte
 2009.0,22.48,Del Norte
 2010.0,112.47,Del Norte
 2011.0,23.51,Del Norte
@@ -1247,7 +1235,6 @@ Year,Waste Produced (Tons),County
 2015.0,2244.39,Sierra
 2016.0,2674.81,Sierra
 2017.0,1288.07,Sierra
-2018.0,,Sierra
 2019.0,15.34,Sierra
 1995.0,23014.0,Glenn
 1996.0,21215.0,Glenn
